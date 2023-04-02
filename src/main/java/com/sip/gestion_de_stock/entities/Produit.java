@@ -15,31 +15,31 @@ public class Produit {
     @Column(name = "idProduit")
     private long id;
 
-    @NotEmpty(message = "Please provide an libelle ")
+   // @NotEmpty(message = "Please provide an libelle ")
     @Column(name = "libelle")
     private String libelle;
-    @NotEmpty(message = "Please provide an description ")
+   // @NotEmpty(message = "Please provide an description ")
     @Column(name = "description")
     private String description;
 
-    @NotEmpty(message = "Please provide an photoFace ")
+   // @NotEmpty(message = "Please provide an photoFace ")
     @Column(name = "photoFace")
     private String photoFace;
-    @NotEmpty(message = "Please provide an photoProfil ")
+    //@NotEmpty(message = "Please provide an photoProfil ")
     @Column(name = "photoProfil")
     private String photoProfil;
 
-    @NotEmpty(message = "Please provide an prix ")
+   // @NotEmpty(message = "Please provide an prix ")
     @Column(name = "prix")
     private float prix;
-    @NotEmpty(message = "Please provide an prixPromotion ")
+   // @NotEmpty(message = "Please provide an prixPromotion ")
     @Column(name = "prixPromotion")
     private float prixPromotion;
-    @NotEmpty(message = "Please provide an quantiteStock ")
+   // @NotEmpty(message = "Please provide an quantiteStock ")
     @Column(name = "quantiteStock")
     private float quantiteStock;
 
-    @NotEmpty(message = "Please provide an dateExpiration ")
+   // @NotEmpty(message = "Please provide an dateExpiration ")
     @Column(name = "dateExpiration")
     private Date dateExpiration;
 

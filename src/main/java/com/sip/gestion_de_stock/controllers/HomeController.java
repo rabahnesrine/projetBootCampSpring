@@ -10,15 +10,17 @@ public class HomeController {
     @RequestMapping(value={"/","home"})
     //@ResponseBody
     public String home() {
-        return "front/index.html";
+        return "dashboard/dashboard.html";
     }
+    @RequestMapping(value={"login"})
 
     public String login() {
-        return "";
+        return "login.html";
     }
+    @RequestMapping(value={"signup"})
 
     public String registration() {
-        return "";
+        return "registration.html";
     }
 
     public String forgotPassword() {

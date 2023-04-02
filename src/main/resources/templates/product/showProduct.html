@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+         <div th:replace="fragments/navbarBack :: navbar"/>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+       <div th:replace="fragments/headerBack :: header"/>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div th:replace="fragments/sidebarBack :: sidebar"/>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                       <li class="breadcrumb-item"><a th:href="@{/dashboard}"  th:text="#{label.dashboard}"></a></li>
+                        <li class="breadcrumb-item active"><a th:href="@{/product/list}"  th:text="#{label.productList}"></a></li>
+                         <li class="breadcrumb-item active"><a href=""  th:text="#{label.viewProduct}"></a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-validation">
+									<form class="form-valide" th:action="@{/product/add}" th:object="${product}" method="post">
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-libelle" th:text="#{label.libelle}"> <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input type="text"  th:field="*{libelle}" class="form-control" id="val-libelle" name="val-libelle" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-description" th:text="#{label.description}"> <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <input  type="text"  th:field="*{description}" class="form-control" id="val-description" name="val-description" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-prix" th:text="#{label.prix}"> <span class="text-danger">*</span>
+                                            </label>
+                                           <div class="col-lg-6">
+                                                <input type="text"  th:field="*{prix}" class="form-control" id="val-prix" name="val-prix" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-quantiteStock" th:text="#{label.quantiteStock}"> <span class="text-danger">*</span>
+                                            </label>
+                                           <div class="col-lg-6">
+                                                <input type="text"  th:field="*{quantiteStock}" class="form-control" id="val-quantiteStock" name="val-quantiteStock" readonly>
+                                            </div>
+                                        </div>
+                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-prixPromotion" th:text="#{label.prixPromotion}"> <span class="text-danger">*</span>
+                                            </label>
+                                           <div class="col-lg-6">
+                                                <input type="text"  th:field="*{prixPromotion}" class="form-control" id="val-prixPromotion" name="val-prixPromotion" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="val-dateExpiration" th:text="#{label.dateExpiration}"> <span class="text-danger">*</span>
+                                            </label>
+                                           <div class="col-lg-6">
+                                                <input type="text"  th:field="*{dateExpiration}" class="form-control" id="val-dateExpiration" name="val-dateExpiration" readonly >
+                                            </div>
+                                        </div>
+                                    <!--   <div class="form-group row">
+				                             <label for="fournisseur" class="col-lg-4 col-form-label" th:text="#{label.fournisseurs}"></label>
+				                             <div class="col-lg-6">
+					                             <input type="text"  th:field="*{fournisseur.nom}" class="form-control" id="val-fournisseur" name="val-fournisseur" readonly >
+											</div>
+										</div> -->
+                                        <div class="form-group row">
+                                            <label for="fournisseur" class="col-lg-4 col-form-label" th:text="#{label.fournisseurs}"></label>
+                                            <div class="col-lg-6">
+                                                <input type="text"  th:field="*{idFournisseur}" class="form-control" id="val-fournisseur" name="val-fournisseur" readonly >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+							            	<label for="photoFace" class="col-lg-4 col-form-label" th:text="#{label.photoFace}"></label>
+										  	<div class="col-lg-6">
+												<img alt="Image" th:src="@{'/uploads/'+ ${product.photoFace}}" width="250" height="250"/>
+
+											</div>
+           								</div>
+           								 <div class="form-group row">
+							            	<label for="photoProfil" class="col-lg-4 col-form-label" th:text="#{label.photoProfil}"></label>
+										  	<div class="col-lg-6">
+												<img alt="Image" th:src="@{'/uploads/'+ ${product.photoProfil}}" width="250" height="250"/>
+											</div>
+           								</div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+        
+        
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div th:replace="fragments/footerBack :: footer"/>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script th:src="@{/plugins/common/common.min.js}"></script>
+    <script th:src="@{/js/custom.min.js}"></script>
+    <script th:src="@{/js/settings.js}"></script>
+    <script th:src="@{/js/gleek.js}"></script>
+    <script th:src="@{/js/styleSwitcher.js}"></script>
+
+    <script th:src="@{/plugins/validation/jquery.validate.min.js}"></script>
+    <script th:src="@{/plugins/validation/jquery.validate-init.js}"></script>
+
+
+</body>
+
+</html>
